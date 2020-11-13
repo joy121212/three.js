@@ -90,7 +90,11 @@ IncidentLight directLight;
 	#pragma unroll_loop_start
 	for ( int i = 0; i < NUM_DIR_LIGHTS; i ++ ) {
 
-		directionalLight = directionalLights[ i ];
+		directionalLight.direction = directionalLights[ i ].direction;
+		directionalLight.color = directionalLights[ i ].color;
+		directionalLight.shadow = directionalLights[ i ].shadow;
+		directionalLight.shadowBias = directionalLights[ i ].shadowBias;
+		directionalLight.shadowRadius = directionalLights[ i ].shadowRadius;
 
 		getDirectionalDirectLightIrradiance( directionalLight, geometry, directLight );
 
